@@ -93,6 +93,7 @@ superset fab create-admin
 # As this is going to be production I have commented load example part but if you need you can run this superset load_examples
 
 # Create default roles and permissions
+----
 superset init
 ----
 
