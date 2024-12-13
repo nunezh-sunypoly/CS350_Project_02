@@ -1,0 +1,17 @@
+SELECT * FROM employment_data;
+SELECT * FROM occupations;
+SELECT * FROM wages;
+
+CREATE or REPLACE FUNCTION get_annual_mean_wage(wage_id_as_input integer) RETURNS float
+
+as $$
+		begin
+			
+			RETURN(SELECT annual_mean_wage
+			FROM wages
+			WHERE wage_id = wage_id_as_input);
+		end
+	$$ LANGUAGE plpgsql;
+
+SELECT get_annual_mean_wage(1);
+
